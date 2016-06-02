@@ -18,6 +18,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
+
+import cherkassy.pro.alphabet.utils.Utils;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -42,12 +45,15 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout.LayoutParams tableParams1=new LinearLayout.LayoutParams(treeWidth,LinearLayout.LayoutParams.MATCH_PARENT,TableLayout.LayoutParams.MATCH_PARENT);
         frame_1.setLayoutParams(frameParams);
         tableLayout_1.setLayoutParams(tableParams1);
+        ImageView img=(ImageView)layout.findViewById(R.id.img_1_2);
+        Log.v("MYVAR",img.getLayoutParams().width+"x"+img.getLayoutParams().height);
 
+        tableLayout_1.addView(Utils.buildTableRow(layout.getContext()),0);
 
         setContentView(layout);
 
-        Log.v("MYVARN",frame_1.getLayoutParams().width+"x"+frame_1.getLayoutParams().height);
-        Log.v("MYVARN",tableLayout_1.getWidth()+"x"+tableLayout_1.getHeight());
+
+        Log.v("MYVARN",tableLayout_1.getLayoutParams().width+"x"+tableLayout_1.getLayoutParams().height);
 
 
     }
